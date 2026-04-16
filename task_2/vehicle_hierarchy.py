@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 
+
 @dataclass
-class Vehicle():
+class Vehicle:
     make: str
     model: str
     number_of_wheels: int
@@ -11,6 +12,7 @@ class Vehicle():
 
     def stop(self):
         pass
+
 
 @dataclass
 class PassengerVehicle(Vehicle):
@@ -22,18 +24,22 @@ class PassengerVehicle(Vehicle):
     def offboard(self, passengers: int):
         pass
 
+
 @dataclass
 class Motorcycle(PassengerVehicle):
     number_of_wheels: int = 2
     passenger_capacity: int = 2
 
+
 @dataclass
 class Car(PassengerVehicle):
     number_of_wheels: int = 4
 
+
 @dataclass
 class Sedan(Car):
     passenger_capacity: int = 5
+
 
 @dataclass
 class Convertible(Car):
@@ -42,6 +48,7 @@ class Convertible(Car):
 
     def toggle_roof(self, is_roof_open: bool):
         pass
+
 
 @dataclass
 class UtilityVehicle(Vehicle):
@@ -54,6 +61,7 @@ class UtilityVehicle(Vehicle):
     def unload(self, payload: int):
         pass
 
+
 @dataclass
 class Truck(UtilityVehicle):
     utility_type: str = "truck"
@@ -62,6 +70,7 @@ class Truck(UtilityVehicle):
 
     def toggle_trailer(self, has_trailer: bool):
         pass
+
 
 @dataclass
 class FireEngine(UtilityVehicle):
@@ -80,4 +89,3 @@ class FireEngine(UtilityVehicle):
 
     def toggle_ladder(self, is_ladder_open: bool):
         pass
-

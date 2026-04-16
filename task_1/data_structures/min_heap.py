@@ -1,9 +1,10 @@
 from typing import Optional
 import heapq
 
+
 class MinHeap:
     """A simple min-heap wrapper around heapq."""
-    
+
     def __init__(self):
         self.heap = []
 

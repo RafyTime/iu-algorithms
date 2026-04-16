@@ -1,8 +1,9 @@
 import bisect
 
+
 class SortedArray:
     """A simple sorted array implementation."""
-    
+
     def __init__(self):
         self.data = []
 

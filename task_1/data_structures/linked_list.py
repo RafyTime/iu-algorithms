@@ -1,13 +1,17 @@
 from typing import Optional
 
+
 class Node:
     """A node in a linked list."""
+
     def __init__(self, data: int):
         self.data = data
         self.next: Optional[Node] = None
 
+
 class LinkedList:
     """A simple singly linked list."""
+
     def __init__(self):
         self.head: Optional[Node] = None
 
@@ -16,7 +20,7 @@ class LinkedList:
         if not self.head:
             self.head = Node(data)
             return
-        
+
         current = self.head
         while current.next:
             current = current.next
@@ -34,7 +38,7 @@ class LinkedList:
         current = self.head
         while current.next and current.next.data != data:
             current = current.next
-        
+
         if current.next:
             current.next = current.next.next
 

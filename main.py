@@ -1,5 +1,5 @@
 def main():
-    print("Hello from algorithms!")
+    print("Hello from Algorithms, Data Structures and Programming Languages!")
 
 
 if __name__ == "__main__":
