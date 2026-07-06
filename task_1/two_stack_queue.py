@@ -6,19 +6,19 @@ class TwoStackQueue:
     def enqueue(self, item):
         self._stack_in.append(item)
 
-    def _transfer_if_needed(self):
+    def _move_if_needed(self):
         if not self._stack_out:
             while self._stack_in:
                 self._stack_out.append(self._stack_in.pop())
 
     def dequeue(self):
-        self._transfer_if_needed()
+        self._move_if_needed()
         if not self._stack_out:
             raise IndexError("dequeue from empty queue")
         return self._stack_out.pop()
 
-    def front(self):
-        self._transfer_if_needed()
+    def peek(self):
+        self._move_if_needed()
         if not self._stack_out:
             raise IndexError("front of empty queue")
         return self._stack_out[-1]
