@@ -1,18 +1,9 @@
-"""
-Task 3 - Bottom-up dynamic programming for the recurrence
-
-    S(k) = 2                                    if 0 <= k <= 1
-    S(k) = 3 * sum_{i=1}^{k-1} S(i) * S(i-1)     if k > 1
-
-A running accumulator carries the partial sum forward between
-iterations so each new S(k) is computed in O(1) amortized work,
-giving O(k) total time instead of the O(k^2) a naive re-summation
-would cost.
-"""
-
 from typing import List
 
-
+"""
+    S(k) = 2                                    if 0 <= k <= 1
+    S(k) = 3 * sum_{i=1}^{k-1} S(i) * S(i-1)     if k > 1
+"""
 def compute_S(k_max: int) -> List[int]:
     S: List[int] = [0] * (k_max + 1)
     
