@@ -8,7 +8,7 @@ from typing import List
 
 def compute_S(k_max: int) -> List[int]:
     if k_max < 0:
-        raise ValueError("k_max must be positive")
+        raise ValueError("k_max must be non-negative")
 
     S: List[int] = [0] * (k_max + 1)
 
