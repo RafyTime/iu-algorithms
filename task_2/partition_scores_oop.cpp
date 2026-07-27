@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <utility>
 
 class QuizResults {
 public:
-    explicit QuizResults(std::vector<int> scores) : scores_(std::move(scores)) {}
+    explicit QuizResults(const std::vector<int>& scores) : scores_(scores) {}
 
     void partitionByThreshold(int threshold) {
         int i = 0;
