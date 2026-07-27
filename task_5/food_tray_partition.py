@@ -2,11 +2,16 @@ from collections.abc import Callable
 
 
 def two_way_partition(trays: list[str], is_fruit: Callable[[str], bool]) -> list[str]:
-    i = 0
-    for j in range(len(trays)):
-        if is_fruit(trays[j]):
-            trays[i], trays[j] = trays[j], trays[i]
-            i += 1
+    left, right = 0, len(trays) - 1
+    while left < right:
+        while left < right and is_fruit(trays[left]):
+            left += 1
+        while left < right and not is_fruit(trays[right]):
+            right -= 1
+        if left < right:
+            trays[left], trays[right] = trays[right], trays[left]
+            left += 1
+            right -= 1
     return trays
 
 
